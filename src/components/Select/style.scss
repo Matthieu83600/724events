@@ -1,0 +1,70 @@
+.SelectContainer {
+  width: 308px;
+  min-height: 86px;
+  position: relative;
+  margin-left: 8px;
+  .label {
+    color: white;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+  &.large {
+    width: 424px;
+    .Select {
+      width: 442px;
+      ul {
+        width: 442px;
+      }
+    }
+  }
+  margin-bottom: 16px;
+}
+.Select {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  width: 308px;
+  min-height: 60px;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  ul {
+    position: relative;
+    list-style: none;
+    width: 300px;
+    padding: 0;
+    padding-left: 16px;
+    li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      min-height: 32px;
+      margin: 0;
+      text-transform: capitalize;
+    }
+  }
+  input {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin-right: 16px;
+  }
+  button {
+    border: none;
+    background: none;
+    height: 32px;
+    margin-top: 16px;
+    margin-right: 8px;
+    &.close {
+      transform: rotate(180deg);
+    }
+  }
+  .SelectTitle {
+    &--show {
+      display: flex;
+    }
+    &--hide {
+      color: white;
+    }
+  }
+}

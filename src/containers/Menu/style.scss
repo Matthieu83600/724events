@@ -1,0 +1,31 @@
+@import "src/colors.scss";
+
+header {
+  height: 112px;
+}
+nav {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  ul {
+    list-style: none;
+    display: flex;
+    width: 80%;
+    justify-content: flex-end;
+    margin: 0;
+    li {
+      list-style: none;
+      margin: 40px;
+      padding: 0;
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+    padding-right: 50px;
+  }
+}

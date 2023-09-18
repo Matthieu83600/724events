@@ -1,0 +1,88 @@
+@import "src/colors.scss";
+
+.SlideCardList {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 586px;
+  .SlideCard {
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: opacity 1s;
+    &--hide {
+      opacity: 0;
+    }
+    &--display {
+      animation: slide 1s forwards;
+    }
+    &__descriptionContainer {
+      position: absolute;
+      left: 0;
+      bottom: 100px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    &__paginationContainer {
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      input {
+        width: 16px;
+        height: 16px;
+        min-width: 0;
+        color: $primary;
+      }
+    }
+    &__description {
+      left: 0;
+      bottom: 50px;
+      width: 857px;
+      background-color: $primary;
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      font-family: "Space Grotesk", sans-serif;
+      h3 {
+        width: 45%;
+        border-right: 1px solid #4314ff;
+        padding-left: 32px;
+        min-height: 116px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        margin: 0;
+      }
+      p {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-size: 18px;
+      }
+      div {
+        width: 5%;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

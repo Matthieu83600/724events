@@ -1,0 +1,44 @@
+@import "src/colors.scss";
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  color: $black;
+  align-items: flex-start;
+  margin: 8px;
+  span {
+    font-size: 12pt;
+    margin-bottom: 4px;
+  }
+}
+input {
+  height: 60px;
+  min-width: 424px;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding-left: 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  color: $black;
+  &:focus {
+    color: $primary;
+  }
+
+  font-family: "Manrope", sans-serif;
+}
+textarea {
+  height: 336px;
+  min-width: 424px;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  color: $black;
+  &:focus {
+    color: $primary;
+  }
+
+  font-family: "Manrope", sans-serif;
+}
