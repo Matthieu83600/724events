@@ -8,11 +8,19 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+    /* 
+      Changement de l'opérateur logique pour trier dans le bon sens les images
+      De la plus ancienne à la plus récente
+    */
+    new Date(evtA.date) > new Date(evtB.date) ? 1 : -1
   );
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc.length ? index + 1 : 0),
+      /*
+        Suppression de l'élément "undefined" en ajoutant -1 à la taille du tableau
+        Un tableau commence toujours à 0 !
+      */
+      () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0),
       5000
     );
   };
@@ -22,14 +30,18 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <>
+        <div>
           <div
-            key={event.title}
+            /*
+              Modification de key pour que chaque image est un ID unique
+            */
+            key={event.id}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
           >
-            <img src={event.cover} alt="forum" />
+            {/* Attribut alt modifié pour avoir les renseignements correspondants à l'image */}
+            <img src={event.cover} alt={event.title} />
             <div className="SlideCard__descriptionContainer">
               <div className="SlideCard__description">
                 <h3>{event.title}</h3>
@@ -45,12 +57,15 @@ const Slider = () => {
                   key={`${event.id}`}
                   type="radio"
                   name="radio-button"
-                  checked={idx === radioIdx}
+                  /*
+                    Remplacement de idx par index pour indiquer sur quelle image on se trouve 
+                  */
+                  checked={index === radioIdx}
                 />
               ))}
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
